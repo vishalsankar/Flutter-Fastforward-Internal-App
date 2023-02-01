@@ -1,4 +1,4 @@
-# flutterfastforwardapp
+# Flutter Fast Forward App
 
 Internal Flutter App for Flutter Fast Forward
 
