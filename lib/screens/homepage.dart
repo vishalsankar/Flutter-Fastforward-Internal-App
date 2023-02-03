@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfastforwardapp/widgets/tabs.dart';
 
+import '../widgets/add_task.dart';
+
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -29,11 +31,20 @@ class _HomepageState extends State<Homepage> {
     });
   }
 
+  void addTask() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Task();
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: addTask,
         child: Icon(Icons.add),
       ),
       backgroundColor: Color.fromARGB(255, 16, 16, 16),
