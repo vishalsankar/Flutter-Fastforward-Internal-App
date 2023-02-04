@@ -11,6 +11,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  final _controller = TextEditingController();
   List tasks = [
     [
       "Take this session",
@@ -35,7 +36,11 @@ class _HomepageState extends State<Homepage> {
     showDialog(
       context: context,
       builder: (context) {
-        return Task();
+        return Task(
+          controller: _controller,
+          save: createNewtask,
+          cancel: () => Navigator.of(context).pop(),
+        );
       },
     );
   }
@@ -64,5 +69,13 @@ class _HomepageState extends State<Homepage> {
         },
       ),
     );
+  }
+
+  void createNewtask() {
+    setState(() {
+      tasks.add([_controller.text, false]);
+      _controller.clear(); //function to add tasks
+    });
+    Navigator.of(context).pop();
   }
 }

@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class Task extends StatelessWidget {
-  const Task({super.key});
+  final controller;
+  VoidCallback save;
+  VoidCallback cancel;
+  Task({super.key, this.controller, required this.save, required this.cancel});
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +24,7 @@ class Task extends StatelessWidget {
             height: 10,
           ),
           TextField(
+            controller: controller,
             decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: "Add a task",
@@ -58,7 +62,7 @@ class Task extends StatelessWidget {
           Row(
             children: [
               MaterialButton(
-                onPressed: () {},
+                onPressed: save,
                 child: Text("Save"),
                 color: Color.fromARGB(255, 123, 123, 123),
               ),
@@ -66,7 +70,7 @@ class Task extends StatelessWidget {
                 width: 20,
               ),
               MaterialButton(
-                onPressed: () {},
+                onPressed: cancel,
                 child: Text("Cancel"),
                 color: Color.fromARGB(255, 123, 123, 123),
               ),
