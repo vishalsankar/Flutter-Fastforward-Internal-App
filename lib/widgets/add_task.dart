@@ -72,7 +72,7 @@ class Task extends StatelessWidget {
                   color: Color.fromARGB(255, 123, 123, 123),
                 ),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width * 0.25,
+                  width: MediaQuery.of(context).size.width * 0.20,
                 ),
                 MaterialButton(
                   onPressed: cancel,
