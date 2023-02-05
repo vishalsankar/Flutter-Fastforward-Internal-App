@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutterfastforwardapp/widgets/tabs.dart';
 
+import '../widgets/add_task.dart';
+
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -9,6 +11,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  final _controller = TextEditingController();
   List tasks = [
     [
       "Take this session",
@@ -20,7 +23,7 @@ class _HomepageState extends State<Homepage> {
     ],
     [
       "Take another session",
-      true,
+      false,
     ],
   ];
   void Clicked(bool? value, int index) {
@@ -29,19 +32,30 @@ class _HomepageState extends State<Homepage> {
     });
   }
 
+  void addTask() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Task(
+          controller: _controller,
+          save: createNewtask,
+          cancel: () => Navigator.of(context).pop(),
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          //print("This button has been pressed");
-        },
+        onPressed: addTask,
         child: Icon(Icons.add),
       ),
       backgroundColor: Color.fromARGB(255, 16, 16, 16),
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('TO DO APP BY GDSC'),
+        title: Text('TO DO GDSC'),
         elevation: 0,
       ),
       body: ListView.builder(
@@ -55,5 +69,13 @@ class _HomepageState extends State<Homepage> {
         },
       ),
     );
+  }
+
+  void createNewtask() {
+    setState(() {
+      tasks.add([_controller.text, false]);
+      _controller.clear(); //function to add tasks
+    });
+    Navigator.of(context).pop();
   }
 }
