@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "350107800953",
+    "project_id": "gdsctodo",
+    "storage_bucket": "gdsctodo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:350107800953:android:127b94507836fd5e828ba8",
+        "android_client_info": {
+          "package_name": "com.krithi.gdsctodo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "350107800953-vqg51si21f5pghseokae6mo2oo8lvb18.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.krithi.gdsctodo",
+            "certificate_hash": "40139abc317e91611923028291e81506a8659af3"
+          }
+        },
+        {
+          "client_id": "350107800953-0hct9jmhrjf1akub709e9mobn6srbip4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBkweA3qmgZ3AumDLhA-hVAWUyEZsSZ8o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "350107800953-0hct9jmhrjf1akub709e9mobn6srbip4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

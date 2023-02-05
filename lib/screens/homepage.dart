@@ -20,7 +20,7 @@ class _HomepageState extends State<Homepage> {
     ],
     [
       "Take another session",
-      false,
+      true,
     ],
   ];
   void Clicked(bool? value, int index) {
@@ -33,13 +33,15 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          //print("This button has been pressed");
+        },
         child: Icon(Icons.add),
       ),
       backgroundColor: Color.fromARGB(255, 16, 16, 16),
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text('TO DO GDSC'),
+        title: Text('TO DO APP BY GDSC'),
         elevation: 0,
       ),
       body: ListView.builder(
