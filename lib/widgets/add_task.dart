@@ -12,7 +12,7 @@ class Task extends StatelessWidget {
     return AlertDialog(
       backgroundColor: Color.fromARGB(255, 44, 44, 44),
       content: Container(
-        height: MediaQuery.of(context).size.height / 3,
+        height: MediaQuery.of(context).size.height / 2.7,
         width: MediaQuery.of(context).size.width * 0.75,
         child: Column(children: [
           Text(
@@ -67,7 +67,7 @@ class Task extends StatelessWidget {
                 color: Color.fromARGB(255, 123, 123, 123),
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.25,
+                width: MediaQuery.of(context).size.width * 0.22,
               ),
               MaterialButton(
                 onPressed: cancel,
